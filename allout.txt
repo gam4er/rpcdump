@@ -1,0 +1,320 @@
+enin-i.avp.ru
+IfId: d95afe70-a6d5-4259-822e-2c84da1ddb0d version 1.0
+Annotation: 
+UUID: 765294ba-60bc-48b8-92e9-89fd77769d91
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49664]
+
+IfId: 367abb81-9844-35f1-ad32-98f038001003 version 2.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49686]
+
+IfId: 650a7e26-eab8-5533-ce43-9c1dfce11511 version 1.0
+Annotation: Vpn APIs
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_np:enin-i.avp.ru[\\PIPE\\ROUTER]
+
+IfId: 0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 version 0.0
+Annotation: RemoteAccessCheck
+UUID: 5fc860e0-6f6e-4fc2-83cd-46324f25e90b
+Binding: ncacn_np:enin-i.avp.ru[\\pipe\\lsass]
+
+IfId: 0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 version 0.0
+Annotation: RemoteAccessCheck
+UUID: 5fc860e0-6f6e-4fc2-83cd-46324f25e90b
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49670]
+
+IfId: 0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 version 0.0
+Annotation: RemoteAccessCheck
+UUID: 9a81c2bd-a525-471d-a4ed-49907c0b23da
+Binding: ncacn_np:enin-i.avp.ru[\\pipe\\lsass]
+
+IfId: 0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 version 0.0
+Annotation: RemoteAccessCheck
+UUID: 9a81c2bd-a525-471d-a4ed-49907c0b23da
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49670]
+
+IfId: 12345778-1234-abcd-ef00-0123456789ac version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_np:enin-i.avp.ru[\\pipe\\lsass]
+
+IfId: 12345778-1234-abcd-ef00-0123456789ac version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49670]
+
+IfId: 12345778-1234-abcd-ef00-0123456789ac version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49676]
+
+IfId: b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 version 2.0
+Annotation: KeyIso
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_np:enin-i.avp.ru[\\pipe\\lsass]
+
+IfId: b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 version 2.0
+Annotation: KeyIso
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49670]
+
+IfId: b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 version 2.0
+Annotation: KeyIso
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49676]
+
+IfId: 8fb74744-b2ff-4c00-be0d-9ef9a191fe1b version 1.0
+Annotation: Ngc Pop Key Service
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_np:enin-i.avp.ru[\\pipe\\lsass]
+
+IfId: 8fb74744-b2ff-4c00-be0d-9ef9a191fe1b version 1.0
+Annotation: Ngc Pop Key Service
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49670]
+
+IfId: 8fb74744-b2ff-4c00-be0d-9ef9a191fe1b version 1.0
+Annotation: Ngc Pop Key Service
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49676]
+
+IfId: 51a227ae-825b-41f2-b4a9-1ac9557a1018 version 1.0
+Annotation: Ngc Pop Key Service
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_np:enin-i.avp.ru[\\pipe\\lsass]
+
+IfId: 51a227ae-825b-41f2-b4a9-1ac9557a1018 version 1.0
+Annotation: Ngc Pop Key Service
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49670]
+
+IfId: 51a227ae-825b-41f2-b4a9-1ac9557a1018 version 1.0
+Annotation: Ngc Pop Key Service
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49676]
+
+IfId: 12345678-1234-abcd-ef00-0123456789ab version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49669]
+
+IfId: 0b6edbfa-4a24-4fc6-8a23-942b1eca65d1 version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49669]
+
+IfId: ae33069b-a2a8-46ee-a235-ddfd339be281 version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49669]
+
+IfId: 4a452661-8290-4b36-8fbe-7f4093a94978 version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49669]
+
+IfId: 76f03f96-cdfd-44fc-a22c-64950a001209 version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49669]
+
+IfId: 6b5bdd1e-528c-422c-af8c-a4079be4fe48 version 1.0
+Annotation: Remote Fw APIs
+UUID: 00000000-0000-0000-0000-000000000000
+enin-i.avp.ru
+IfId: d95afe70-a6d5-4259-822e-2c84da1ddb0d version 1.0
+Annotation: 
+UUID: 765294ba-60bc-48b8-92e9-89fd77769d91
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49664]
+
+IfId: 367abb81-9844-35f1-ad32-98f038001003 version 2.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49686]
+
+IfId: 650a7e26-eab8-5533-ce43-9c1dfce11511 version 1.0
+Annotation: Vpn APIs
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_np:enin-i.avp.ru[\\PIPE\\ROUTER]
+
+IfId: 0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 version 0.0
+Annotation: RemoteAccessCheck
+UUID: 5fc860e0-6f6e-4fc2-83cd-46324f25e90b
+Binding: ncacn_np:enin-i.avp.ru[\\pipe\\lsass]
+
+IfId: 0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 version 0.0
+Annotation: RemoteAccessCheck
+UUID: 5fc860e0-6f6e-4fc2-83cd-46324f25e90b
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49670]
+
+IfId: 0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 version 0.0
+Annotation: RemoteAccessCheck
+UUID: 9a81c2bd-a525-471d-a4ed-49907c0b23da
+Binding: ncacn_np:enin-i.avp.ru[\\pipe\\lsass]
+
+IfId: 0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7 version 0.0
+Annotation: RemoteAccessCheck
+UUID: 9a81c2bd-a525-471d-a4ed-49907c0b23da
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49670]
+
+IfId: 12345778-1234-abcd-ef00-0123456789ac version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_np:enin-i.avp.ru[\\pipe\\lsass]
+
+IfId: 12345778-1234-abcd-ef00-0123456789ac version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49670]
+
+IfId: 12345778-1234-abcd-ef00-0123456789ac version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49676]
+
+IfId: b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 version 2.0
+Annotation: KeyIso
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_np:enin-i.avp.ru[\\pipe\\lsass]
+
+IfId: b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 version 2.0
+Annotation: KeyIso
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49670]
+
+IfId: b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86 version 2.0
+Annotation: KeyIso
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49676]
+
+IfId: 8fb74744-b2ff-4c00-be0d-9ef9a191fe1b version 1.0
+Annotation: Ngc Pop Key Service
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_np:enin-i.avp.ru[\\pipe\\lsass]
+
+IfId: 8fb74744-b2ff-4c00-be0d-9ef9a191fe1b version 1.0
+Annotation: Ngc Pop Key Service
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49670]
+
+IfId: 8fb74744-b2ff-4c00-be0d-9ef9a191fe1b version 1.0
+Annotation: Ngc Pop Key Service
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49676]
+
+IfId: 51a227ae-825b-41f2-b4a9-1ac9557a1018 version 1.0
+Annotation: Ngc Pop Key Service
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_np:enin-i.avp.ru[\\pipe\\lsass]
+
+IfId: 51a227ae-825b-41f2-b4a9-1ac9557a1018 version 1.0
+Annotation: Ngc Pop Key Service
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49670]
+
+IfId: 51a227ae-825b-41f2-b4a9-1ac9557a1018 version 1.0
+Annotation: Ngc Pop Key Service
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49676]
+
+IfId: 12345678-1234-abcd-ef00-0123456789ab version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49669]
+
+IfId: 0b6edbfa-4a24-4fc6-8a23-942b1eca65d1 version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49669]
+
+IfId: ae33069b-a2a8-46ee-a235-ddfd339be281 version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49669]
+
+IfId: 4a452661-8290-4b36-8fbe-7f4093a94978 version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49669]
+
+IfId: 76f03f96-cdfd-44fc-a22c-64950a001209 version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49669]
+
+IfId: 6b5bdd1e-528c-422c-af8c-a4079be4fe48 version 1.0
+Annotation: Remote Fw APIs
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49668]
+
+IfId: 29770a8f-829b-4158-90a2-78cd488501f7 version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_np:enin-i.avp.ru[\\pipe\\SessEnvPublicRpc]
+
+IfId: 29770a8f-829b-4158-90a2-78cd488501f7 version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49667]
+
+IfId: 7f1343fe-50a9-4927-a778-0c5859517bac version 1.0
+Annotation: DfsDs service
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_np:enin-i.avp.ru[\\PIPE\\wkssvc]
+
+IfId: 1ff70682-0a51-30e8-076d-740be8cee98b version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_np:enin-i.avp.ru[\\PIPE\\atsvc]
+
+IfId: 378e52b0-c0a9-11cf-822d-00aa0051e40f version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_np:enin-i.avp.ru[\\PIPE\\atsvc]
+
+IfId: 33d84484-3626-47ee-8c6f-e7e98b113be1 version 2.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_np:enin-i.avp.ru[\\PIPE\\atsvc]
+
+IfId: 86d35949-83c9-4044-b424-db363231fd0c version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_np:enin-i.avp.ru[\\PIPE\\atsvc]
+
+IfId: 86d35949-83c9-4044-b424-db363231fd0c version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49666]
+
+IfId: 3a9ef155-691d-4449-8d05-09ad57031823 version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_np:enin-i.avp.ru[\\PIPE\\atsvc]
+
+IfId: 3a9ef155-691d-4449-8d05-09ad57031823 version 1.0
+Annotation: 
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49666]
+
+IfId: f6beaff7-1e19-4fbb-9f8f-b89e2018337c version 1.0
+Annotation: Event log TCPIP
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_np:enin-i.avp.ru[\\pipe\\eventlog]
+
+IfId: f6beaff7-1e19-4fbb-9f8f-b89e2018337c version 1.0
+Annotation: Event log TCPIP
+UUID: 00000000-0000-0000-0000-000000000000
+Binding: ncacn_ip_tcp:enin-i.avp.ru[49665]
+
+IfId: 76f226c3-ec14-4325-8a99-6a46348418af version 1.0
+Annotation: 
+UUID: b08669ee-8cb5-43a5-a017-84fe00000000
+Binding: ncacn_np:enin-i.avp.ru[\\PIPE\\InitShutdown]
+
+IfId: d95afe70-a6d5-4259-822e-2c84da1ddb0d version 1.0
+Annotation: 
+UUID: 765294ba-60bc-48b8-92e9-89fd77769d91
+Binding: ncacn_np:enin-i.avp.ru[\\PIPE\\InitShutdown]
+
