@@ -1,9 +1,7 @@
-/*
- * Copyright (c) BindView Development Corporation, 2001
- * See LICENSE file.
- * Author: Todd Sabin <tsabin@razor.bindview.com>
- */
+#define WIN32_LEAN_AND_MEAN
 
+#define bzero(b,len) (memset((b), '\0', (len)), (void) 0)  
+#define bcopy(b1,b2,len) (memmove((b2), (b1), (len)), (void) 0)
 
 #include <windows.h>
 #include <winnt.h>
@@ -13,11 +11,116 @@
 #include <rpc.h>
 #include <rpcdce.h>
 
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+
+#include <winsock2.h>
+#include <ws2tcpip.h>
+
+
+
+
+// Need to link with Ws2_32.lib, Mswsock.lib, and Advapi32.lib
+#pragma comment (lib, "Ws2_32.lib")
+#pragma comment (lib, "Mswsock.lib")
+#pragma comment (lib, "AdvApi32.lib")
+
 static int verbosity;
 
+BOOL fastconnect(char* ipaddr, int port)
+{
+    // you really shouldn't be calling WSAStartup() here.
+    // Call it at app startup instead...
 
-int
-try_protocol (char *protocol, char *server)
+
+    struct sockaddr_in server = { 0 };
+    
+    server.sin_family = AF_INET;       
+
+    server.sin_addr.s_addr = inet_addr(ipaddr);
+    server.sin_port = htons(port);
+
+    int sock;
+
+    // ipaddr valid?
+    if (server.sin_addr.s_addr == INADDR_NONE)
+        return FALSE;
+
+    sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+    if (sock == INVALID_SOCKET)
+        return FALSE;
+
+    // put socked in non-blocking mode...
+    u_long block = 1;
+    if (ioctlsocket(sock, FIONBIO, &block) == SOCKET_ERROR)
+    {
+        closesocket(sock);
+        //closesock(sock);
+        return FALSE;
+    }
+
+    if (connect(sock, (struct sockaddr*)&server, sizeof(server)) == SOCKET_ERROR)
+    {
+        if (WSAGetLastError() != WSAEWOULDBLOCK)
+        {
+            // connection failed
+            closesocket(sock);
+            //closesock(sock);
+            return FALSE;
+        }
+
+        // connection pending
+
+        fd_set setW, setE;
+
+        FD_ZERO(&setW);
+        FD_SET(sock, &setW);
+        FD_ZERO(&setE);
+        FD_SET(sock, &setE);
+
+        TIMEVAL time_out /*= { 0 }*/;
+        time_out.tv_sec = 0;
+        time_out.tv_usec = 30000;
+
+        int ret = select(0, NULL, &setW, &setE, &time_out);
+        if (ret <= 0)
+        {
+            // select() failed or connection timed out
+            closesocket(sock);
+            //closesock(sock);
+            if (ret == 0)
+                WSASetLastError(WSAETIMEDOUT);
+            return FALSE;
+        }
+
+        if (FD_ISSET(sock, &setE))
+        {
+            // connection failed            
+            int err = 0;
+            getsockopt(sock, SOL_SOCKET, SO_ERROR, (char*)&err, sizeof(err));
+            closesocket(sock);
+            //closesock(sock);
+            WSASetLastError(err);
+            return FALSE;
+        }
+    }
+
+    // connection successful
+    // put socked in blocking mode...
+    block = 0;
+    if (ioctlsocket(sock, FIONBIO, &block) == SOCKET_ERROR)
+    {
+        closesocket(sock);
+        //closesock(sock);
+        return FALSE;
+    }
+
+    closesocket(sock);
+    return TRUE;
+}
+
+int try_protocol (char *protocol, char *server)
 {
     unsigned char *pStringBinding = NULL;
     RPC_BINDING_HANDLE hRpc;
@@ -25,6 +128,22 @@ try_protocol (char *protocol, char *server)
     RPC_STATUS rpcErr;
     RPC_STATUS rpcErr2;
     int numFound = 0;
+
+    BOOL res;
+    res = fastconnect(server, 135);
+
+
+    if (res == 0)
+    {
+        res = fastconnect(server, 445);
+        if (res == 0)
+        {
+            printf("RPC on %s are disabled\n", server);
+            return numFound;
+        }
+    }
+
+    printf("RPC on %s are enabled\n", server);
 
     //
     // Compose the string binding
@@ -35,7 +154,7 @@ try_protocol (char *protocol, char *server)
         fprintf (stderr, "RpcStringBindingCompose failed: %d\n", rpcErr);
         return numFound;
     }
-    
+
     //
     // Convert to real binding
     //
@@ -44,6 +163,14 @@ try_protocol (char *protocol, char *server)
         fprintf (stderr, "RpcBindingFromStringBinding failed: %d\n", rpcErr);
         RpcStringFree (&pStringBinding);
         return numFound;
+    }
+
+    //
+    // Convert to real binding
+    //
+    rpcErr = RpcBindingSetOption(&hRpc, RPC_C_OPT_CALL_TIMEOUT,3);
+    if (rpcErr != RPC_S_OK) {
+        fprintf(stderr, "RpcBindingSetOption failed: %d\n", rpcErr);
     }
 
     //
@@ -249,8 +376,8 @@ Usage (char *app)
 {
     printf ("Usage: %s [options] <target>\n", app);
     printf ("  options:\n");
-    printf ("    -p protseq   -- use protocol sequence\n", app);
-    printf ("    -v           -- increase verbosity\n", app);
+    printf ("    -p protseq   -- use protocol sequence\n");
+    printf ("    -v           -- increase verbosity\n");
     exit (1);
 }
 
@@ -262,6 +389,15 @@ main (int argc, char *argv[1])
     int i, j;
     char *target = NULL;
     char *protseq = NULL;
+
+    WORD wVersionRequested;
+    WSADATA wsaData;
+    int err;
+
+    /* Use the MAKEWORD(lowbyte, highbyte) macro declared in Windef.h */
+    wVersionRequested = MAKEWORD(2, 2);
+
+    err = WSAStartup(wVersionRequested, &wsaData);
 
     for (j=1; j<argc; j++) {
         if (argv[j][0] == '-') {
@@ -298,6 +434,8 @@ main (int argc, char *argv[1])
             }
         }
     }
+
+    WSACleanup();
 
     return 0;
 }
