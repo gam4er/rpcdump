@@ -128,11 +128,10 @@ int try_protocol (char *protocol, char *server)
     RPC_STATUS rpcErr;
     RPC_STATUS rpcErr2;
     int numFound = 0;
-
+    /*
     BOOL res;
     res = fastconnect(server, 135);
-
-
+       
     if (res == 0)
     {
         res = fastconnect(server, 445);
@@ -142,7 +141,7 @@ int try_protocol (char *protocol, char *server)
             return numFound;
         }
     }
-
+    */
     printf("RPC on %s are enabled\n", server);
 
     //
@@ -428,6 +427,20 @@ main (int argc, char *argv[1])
     if (protseq) {
         try_protocol (protseq, target);
     } else {
+        /*
+        BOOL res;
+        res = fastconnect(target, 135);
+
+        if (res == 0)
+        {
+            res = fastconnect(target, 445);
+            if (res == 0)
+            {
+                printf("RPC on %s are disabled\n", target);
+                return 0;
+            }
+        }
+        */
         for (i=0; i<NUM_PROTOCOLS; i++) {
             if (try_protocol (protocols[i], target) > 0) {
                 break;
