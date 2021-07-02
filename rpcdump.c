@@ -142,7 +142,7 @@ int try_protocol (char *protocol, char *server)
         }
     }
     */
-    printf("RPC on %s are enabled\n", server);
+    printf("RPC on %s using %s\n", server, protocol);
 
     //
     // Compose the string binding
@@ -150,7 +150,7 @@ int try_protocol (char *protocol, char *server)
     rpcErr = RpcStringBindingCompose (NULL, protocol, server,
                                       NULL, NULL, &pStringBinding);
     if (rpcErr != RPC_S_OK) {
-        fprintf (stderr, "RpcStringBindingCompose failed: %d\n", rpcErr);
+        fprintf (stderr, "RpcStringBindingCompose failed: %d using %s protocol\n", rpcErr, protocol);
         return numFound;
     }
 
@@ -159,14 +159,11 @@ int try_protocol (char *protocol, char *server)
     //
     rpcErr = RpcBindingFromStringBinding (pStringBinding, &hRpc);
     if (rpcErr != RPC_S_OK) {
-        fprintf (stderr, "RpcBindingFromStringBinding failed: %d\n", rpcErr);
+        fprintf (stderr, "RpcBindingFromStringBinding failed: %d using %s protocol\n", rpcErr, protocol);
         RpcStringFree (&pStringBinding);
         return numFound;
     }
 
-    //
-    // Convert to real binding
-    //
     rpcErr = RpcBindingSetOption(&hRpc, RPC_C_OPT_CALL_TIMEOUT,3);
     if (rpcErr != RPC_S_OK) {
         fprintf(stderr, "RpcBindingSetOption failed: %d\n", rpcErr);
@@ -362,11 +359,20 @@ int try_protocol (char *protocol, char *server)
 
 
 char *protocols[] = {
-    "ncacn_ip_tcp",
-    "ncadg_ip_udp",
-    "ncacn_np",
-    "ncacn_nb_tcp",
-    "ncacn_http",
+"ncacn_nb_tcp",
+"ncacn_nb_ipx",
+"ncacn_nb_nb",
+"ncacn_ip_tcp",
+"ncacn_np",
+"ncacn_spx",
+"ncacn_dnet_nsp",
+"ncacn_at_dsp",
+"ncacn_vns_spp",
+"ncadg_mq",
+"ncacn_http",
+"ncadg_ip_udp",
+"ncadg_ipx",
+"ncalrpc",
 };
 #define NUM_PROTOCOLS (sizeof (protocols) / sizeof (protocols[0]))
 
@@ -443,7 +449,7 @@ main (int argc, char *argv[1])
         */
         for (i=0; i<NUM_PROTOCOLS; i++) {
             if (try_protocol (protocols[i], target) > 0) {
-                break;
+                //break;
             }
         }
     }
