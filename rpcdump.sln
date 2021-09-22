@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rpcdump", "rpcdump.vcxproj", "{272B0BB1-F410-4AC9-B5CD-23C82C1EF8FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{272B0BB1-F410-4AC9-B5CD-23C82C1EF8FD}.Debug|x86.ActiveCfg = Debug|Win32
+		{272B0BB1-F410-4AC9-B5CD-23C82C1EF8FD}.Debug|x86.Build.0 = Debug|Win32
+		{272B0BB1-F410-4AC9-B5CD-23C82C1EF8FD}.Release|x86.ActiveCfg = Release|Win32
+		{272B0BB1-F410-4AC9-B5CD-23C82C1EF8FD}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {207D27D2-92F7-4F8F-8D66-41A98792441A}
+	EndGlobalSection
+EndGlobal
